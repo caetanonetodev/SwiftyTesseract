@@ -10,7 +10,7 @@ import Foundation
 import libtesseract
 
 public typealias TessBaseAPI = OpaquePointer
-typealias Pix = UnsafeMutablePointer<PIX>?
+typealias Pix = OpaquePointer?
 
 /// A class that performs optical character recognition with the open-source Tesseract library
 public class Tesseract {

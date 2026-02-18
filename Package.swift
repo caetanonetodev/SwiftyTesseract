@@ -1,11 +1,11 @@
-// swift-tools-version:5.3
+// swift-tools-version:5.7
 // The swift-tools-version declares the minimum version of Swift required to build this package.
 
 import PackageDescription
 
 #if !os(Linux)
 let dependencies: [PackageDescription.Package.Dependency] = [
-  .package(url: "https://github.com/SwiftyTesseract/libtesseract.git", .upToNextMinor(from: "0.2.0")),
+  .package(url: "https://github.com/caetanonetodev/libtesseract.git", .upToNextMajor(from: "1.0.0")),
 ]
 #else
 let dependencies = [PackageDescription.Package.Dependency]()
@@ -52,7 +52,7 @@ let targets: [PackageDescription.Target] = [
 
 let package = Package(
   name: "SwiftyTesseract",
-  platforms: [.iOS(.v11), .macOS(.v10_13)],
+  platforms: [.iOS(.v16), .macOS(.v13)],
   products: [
     // Products define the executables and libraries a package produces, and make them visible to other packages.
     .library(
