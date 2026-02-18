@@ -20,7 +20,8 @@ let testTarget = PackageDescription.Target.testTarget(
 #if !os(Linux)
 let linkerSettings: [PackageDescription.LinkerSetting] = [
   .linkedLibrary("z"),
-  .linkedLibrary("c++")
+  .linkedLibrary("c++"),
+  .linkedFramework("Accelerate")
 ]
 #else
 let linkerSettings: [PackageDescription.LinkerSetting] = [

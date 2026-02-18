@@ -15,6 +15,7 @@ public extension Tesseract {
   func performOCR(on data: Data) -> Result<String, Error> {
     perform { tessPointer in
       var pix = createPix(from: data)
+      guard pix != nil else { return .failure(Tesseract.Error.unableToExtractTextFromImage) }
       defer { pixDestroy(&pix) }
 
       TessBaseAPISetImage2(tessPointer, pix)
